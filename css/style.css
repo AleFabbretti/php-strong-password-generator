@@ -1,0 +1,29 @@
+/* ----RESET---- */
+
+body {
+  background-color: #001632;
+}
+
+/* ----HEADER---- */
+
+header {
+  color: #808b99;
+}
+
+/* ----MAIN---- */
+.parameters {
+  background-color: #cff4fc;
+  color: #0b4554;
+}
+
+.input {
+  background-color: white;
+}
+
+.col-left {
+  width: 60%;
+}
+
+.col-left div:nth-child(2) {
+  height: 180px;
+}
