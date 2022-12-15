@@ -8,5 +8,10 @@ function randomPassword() {
         $pass[] = $alphabet[$n];
     }
     return implode($pass);
-}
+};
+if (!empty($_GET['pass-leng'])) {
+    $length = $_GET['pass-leng'];
+    $_SESSION['password'] = randomPassword($length);
+    header("Location: http://localhost/php-strong-password-generator/password_generate.php");
+};
 ?>
