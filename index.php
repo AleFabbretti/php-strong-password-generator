@@ -1,3 +1,16 @@
+<?php
+function randomPassword() {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array();
+    $alphaLength = strlen($alphabet) - 1;
+    for ($i = 0; $i < $_GET['pass-leng']; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +30,9 @@
     </header>
     <main class="container mt-5">
         <div class="parameters px-3 py-4 rounded">
+            <?php 
+                echo isset($_GET['pass-leng']) ? randomPassword() : "<p class=\"m-0\">Nessun parametro valido inserito</p>";
+            ?>
         </div>
         <div class="input rounded mt-3 p-4">
             <form class="d-flex"  action="index.php" method="GET">
